@@ -1,8 +1,9 @@
 {
-  "name": "enjoy-rev",
-  "productName": "enjoy-rev",
+  "type": "module",
+  "name": "enjoy",
+  "productName": "Enjoy",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Enjoy desktop app",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -27,7 +28,7 @@
     "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.25.0",
     "ts-node": "^10.0.0",
-    "typescript": "~4.5.4",
+    "typescript": "^5.7.3",
     "vite": "^5.0.12"
   },
   "keywords": [],
@@ -36,7 +37,7 @@
     "email": "zengqiang96@gmail.com"
   },
   "license": "MIT",
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "packageManager": "yarn@1.22.22",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
   }

@@ -1,6 +1,10 @@
 import { app, BrowserWindow } from 'electron';
-import path from 'path';
 import started from 'electron-squirrel-startup';
+import path from 'path';
+import url from "url";
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
