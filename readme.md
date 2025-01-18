@@ -64,4 +64,15 @@ export default defineConfig({
 
 理论上配置完成就ok。但是不知道为啥，我本地跑的时候报错，删除electron包之后，重新安装运行就ok了。
 
-4. 
+4. 添加ShadcnUI
+
+```shell
+yarn add -D tailwindcss postcss autoprefixer
+
+
+npx tailwindcss init -p
+```
+
+```shell
+npx shadcn@latest init
+```
