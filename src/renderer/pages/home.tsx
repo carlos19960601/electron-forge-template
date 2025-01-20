@@ -1,10 +1,30 @@
-import { Button } from "@renderer/components/ui/button";
+import { AppSettingsProviderContext } from "@renderer/context/app-settings-provider";
+import { useContext, useEffect, useState } from "react";
 
 const Home = () => {
+  const { EnjoyApp } = useContext(AppSettingsProviderContext);
+  const [platformInfo, setPlatformInfo] = useState<PlatformInfoType>();
+
+  useEffect(() => {
+    EnjoyApp.app.getPlatformInfo().then(setPlatformInfo);
+  }, []);
+
   return (
-    <div>
-      <p className="text-3xl">Home</p>
-      <Button>Button</Button>
+    <div className="h-full flex justify-center items-center">
+      <div className="flex flex-col gap-4">
+        <div className="flex gap-4">
+          <span className="font-bold">Platform:</span>
+          <span>{platformInfo?.platform}</span>
+        </div>
+        <div className="flex gap-4">
+          <span className="font-bold">Arch:</span>
+          <span>{platformInfo?.arch}</span>
+        </div>
+        <div className="flex gap-4">
+          <span className="font-bold">Version:</span>
+          <span>{platformInfo?.version}</span>
+        </div>
+      </div>
     </div>
   );
 };

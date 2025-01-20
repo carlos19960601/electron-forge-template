@@ -29,3 +29,8 @@
 import './index.css';
 import "./renderer/index";
 
+declare global {
+  interface Window {
+    __ENJOY_APP__: EnjoyAppType;
+  }
+}

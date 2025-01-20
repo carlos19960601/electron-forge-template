@@ -1,4 +1,4 @@
-import { BrowserWindow } from "electron";
+import { BrowserWindow, ipcMain } from "electron";
 import path from 'path';
 
 const __dirname = import.meta.dirname;
@@ -11,6 +11,15 @@ class WindowWrapper {
       this.win.show();
       return;
     }
+
+    // App Options
+    ipcMain.handle("app-platform-info", () => {
+      return {
+        platform: process.platform,
+        arch: process.arch,
+        version: process.getSystemVersion(),
+      }
+    })
 
     // Create the browser window.
     const mainWindow = new BrowserWindow({
