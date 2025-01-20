@@ -1,4 +1,5 @@
 import { AppSettingsProviderContext } from "@renderer/context/app-settings-provider";
+import { t } from "i18next";
 import { useContext, useEffect, useState } from "react";
 
 const Home = () => {
@@ -12,6 +13,10 @@ const Home = () => {
   return (
     <div className="h-full flex justify-center items-center">
       <div className="flex flex-col gap-4">
+        <div className="flex gap-4">
+          <span className="font-bold">Translation:</span>
+          <span>{t("sidebar.home")}</span>
+        </div>
         <div className="flex gap-4">
           <span className="font-bold">Platform:</span>
           <span>{platformInfo?.platform}</span>

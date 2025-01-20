@@ -26,6 +26,7 @@
  * ```
  */
 
+import "./i18n";
 import './index.css';
 import "./renderer/index";
 
