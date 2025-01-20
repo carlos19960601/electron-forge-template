@@ -1,4 +1,5 @@
 import os from "os";
+import path from "path";
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
@@ -21,5 +22,12 @@ export default defineConfig({
         },
       ]
     }),
-  ]
+  ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+      "@main": path.resolve(__dirname, "./src/main"),
+      "@commands": path.resolve(__dirname, "./src/commands"),
+    }
+  }
 });
