@@ -1,5 +1,6 @@
 import db from "@main/db";
 import log from "@main/logger";
+import settings from "@main/settings";
 import { BrowserWindow, ipcMain } from "electron";
 import path from 'path';
 
@@ -18,6 +19,9 @@ class WindowWrapper {
 
     // Prepare local database
     db.registerIpcHandlers();
+
+    // Prepare Settings
+    settings.registerIpcHandlers();
 
     // App Options
     ipcMain.handle("app-platform-info", () => {
