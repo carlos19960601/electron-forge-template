@@ -1,7 +1,10 @@
 import { BrowserWindow, ipcMain } from "electron";
 import path from 'path';
+import log from "@main/logger"
 
 const __dirname = import.meta.dirname;
+
+const logger = log.scope("window");
 
 class WindowWrapper {
   public win: BrowserWindow | null = null;
