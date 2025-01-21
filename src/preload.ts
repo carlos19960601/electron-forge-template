@@ -8,5 +8,8 @@ contextBridge.exposeInMainWorld("__ENJOY_APP__", {
     getPlatformInfo: () => {
       return ipcRenderer.invoke("app-platform-info")
     }
+  },
+  db: {
+    connect: () => ipcRenderer.invoke("db-connect"),
   }
 })

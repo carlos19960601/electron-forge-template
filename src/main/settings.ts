@@ -38,6 +38,7 @@ const dbPath = () => {
 };
 
 const userDataPath = () => {
+  // settings 存储的位置是 app.getPath('userData') 
   const userId = settings.getSync("user.id");
   if (!userId) return null;
 

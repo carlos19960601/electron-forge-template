@@ -76,3 +76,18 @@ npx tailwindcss init -p
 ```shell
 npx shadcn@latest init
 ```
+
+
+5. 添加DB支持
+
+可能会出现下面的错误
+
+```
+Error: Could not dynamically require "sqlite3". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.
+```
+
+rollup打包时会报错无法支持动态引入的方式
+
+可能会有很多种方式解决这个问题，我采用最方便的方式，将有问题的模块排除在外，让打包后的代码在运行时直接从node_modules中加载模块，一劳永逸。
+
+简单而言，就是在vite或者rollup中配置external参数。

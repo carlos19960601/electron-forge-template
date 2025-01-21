@@ -18,5 +18,8 @@
       "@main/*": ["./src/main/*"],
       "@commands": ["./src/commands"]
     },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "useDefineForClassFields": false
   }
 }

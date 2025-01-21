@@ -1,6 +1,7 @@
+import db from "@main/db";
+import log from "@main/logger";
 import { BrowserWindow, ipcMain } from "electron";
 import path from 'path';
-import log from "@main/logger"
 
 const __dirname = import.meta.dirname;
 
@@ -14,6 +15,9 @@ class WindowWrapper {
       this.win.show();
       return;
     }
+
+    // Prepare local database
+    db.registerIpcHandlers();
 
     // App Options
     ipcMain.handle("app-platform-info", () => {
